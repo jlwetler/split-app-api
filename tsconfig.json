@@ -3,9 +3,16 @@
         "outDir": "dist",
         "esModuleInterop": true,
         "module": "es6",
+        "moduleResolution": "Node",
         "noImplicitAny": true,
         "emitDecoratorMetadata": true,
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "joi": [
+                "node_modules/joi/dist/joi-browser.min"
+            ]
+        }
     },
     "ts-node": {
         "esm": true
