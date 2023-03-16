@@ -1,6 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
 import Place from "./Place";
-
 
 @Entity("products")
 export default class Product {
@@ -16,9 +15,7 @@ export default class Product {
     @Column()
     quantity: number;
 
-    @Column()
-    placeId: number;
-
-    @ManyToOne(() => Place, (places) => places.placeProduct)
-    productPlace: Place;
+    @ManyToOne(() => Place)
+    @JoinColumn({ name: 'placeId' })
+    place: Place;
 }
