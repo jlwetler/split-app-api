@@ -1,6 +1,6 @@
 import "./setup";
-
-import express from "express";
+import authRouter from "./routes/authRouter"
+import express, { Router } from "express";
 import cors from "cors";
 import "reflect-metadata";
 
@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
+app.use(authRouter);
 
 
 
